@@ -3,6 +3,10 @@ import { ProductService } from "../services/products.service";
 import { ProductQuery } from "../types";
 import { handle_http } from "../utils/error_handle";
 
+/**
+ * Controlador de productos.
+ * Encapsula la lógica de endpoints relacionados a productos.
+ */
 export class ProductController {
   private productService: ProductService;
 
@@ -10,6 +14,17 @@ export class ProductController {
     this.productService = new ProductService();
   }
 
+  /**
+   * GET /api/products
+   * Obtiene un listado de productos con filtros, orden y paginación.
+   * Query params:
+   * - search: string (opcional) — búsqueda por nombre o categoría
+   * - sort: "price" | "name" (opcional) — campo por el que ordenar
+   * - order: "asc" | "desc" (opcional) — orden ascendente o descendente
+   * - page: number (opcional) — página de resultados
+   * - limit: number (opcional) — número de resultados por página
+   * - available: boolean (opcional) — filtrar por disponibilidad
+   */
   getProducts = async (req: Request, res: Response): Promise<void> => {
     try {
       const query: ProductQuery = {
@@ -37,6 +52,11 @@ export class ProductController {
     }
   };
 
+  /**
+   * GET /api/products/:id
+   * Obtiene un producto por su ID
+   * @param req.params.id - ID del producto
+   */
   getProductById = async (req: Request, res: Response): Promise<void> => {
     try {
       const { id } = req.params;

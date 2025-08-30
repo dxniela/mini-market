@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { router } from "./routes";
 import path from "path";
+import { connectDB } from "./database/mongo";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -46,12 +47,16 @@ app.use(
   }
 );
 
+// Para imágenes estáticas
 app.use("/images", express.static(path.join(__dirname, "../public/images")));
 
+/** Inicializa la conexión a la DB y arranca el servidor */
 async function main() {
   console.log("Initializing server...");
 
   try {
+    await connectDB();
+
     app.listen(PORT, () => {
       console.log(`Server running on http://localhost:${PORT}`);
     });

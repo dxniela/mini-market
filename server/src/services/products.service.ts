@@ -1,42 +1,51 @@
-import { Product, ProductQuery, PaginatedResponse } from '../types';
-import productsData from '../data/products.json';
+import { Product, ProductQuery, PaginatedResponse } from "../types";
+import productsData from "../data/products.json";
 
+/**
+ * Servicio de productos.
+ * Contiene la lógica de negocio para filtrar, ordenar y paginar productos.
+ */
 export class ProductService {
   private products: Product[] = productsData;
 
+  /**
+   * Obtiene productos según los filtros proporcionados
+   * @param query - objeto con filtros, orden y paginación
+   */
   async getProducts(query: ProductQuery): Promise<PaginatedResponse<Product>> {
     let filteredProducts = [...this.products];
 
     // Filtrar por búsqueda
     if (query.search) {
       const searchLower = query.search.toLowerCase();
-      filteredProducts = filteredProducts.filter(product =>
-        product.name.toLowerCase().includes(searchLower) ||
-        product.category.toLowerCase().includes(searchLower)
+      filteredProducts = filteredProducts.filter(
+        (product) =>
+          product.name.toLowerCase().includes(searchLower) ||
+          product.category.toLowerCase().includes(searchLower)
       );
     }
 
     // Filtrar por disponibilidad
     if (query.available !== undefined) {
-      filteredProducts = filteredProducts.filter(product =>
-        product.isAvailable === query.available
+      filteredProducts = filteredProducts.filter(
+        (product) => product.isAvailable === query.available
       );
     }
 
     // Ordenar
-    const sortField = query.sort || 'name';
-    const sortOrder = query.order || 'asc';
+    const sortField = query.sort || "name";
+    const sortOrder = query.order || "asc";
 
     filteredProducts.sort((a, b) => {
       let valueA: any = a[sortField];
       let valueB: any = b[sortField];
 
-      if (typeof valueA === 'string') {
+      if (typeof valueA === "string") {
         valueA = valueA.toLowerCase();
         valueB = valueB.toLowerCase();
       }
 
-      if (sortOrder === 'asc') {
+      if (sortOrder === "asc") {
         return valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
       } else {
         return valueA > valueB ? -1 : valueA < valueB ? 1 : 0;
@@ -57,16 +66,18 @@ export class ProductService {
         page,
         limit,
         total: filteredProducts.length,
-        totalPages: Math.ceil(filteredProducts.length / limit)
-      }
+        totalPages: Math.ceil(filteredProducts.length / limit),
+      },
     };
   }
 
+  /** Obtiene un producto por su ID */
   async getProductById(id: string): Promise<Product | null> {
-    return this.products.find(product => product.id === id) || null;
+    return this.products.find((product) => product.id === id) || null;
   }
 
+  /** Obtiene todos los productos disponibles */
   async getAvailableProducts(): Promise<Product[]> {
-    return this.products.filter(product => product.isAvailable);
+    return this.products.filter((product) => product.isAvailable);
   }
 }

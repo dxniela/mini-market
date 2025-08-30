@@ -27,7 +27,7 @@ npm run dev
 ```
 ## **Variables de Entorno**
 
-Crea un archivo .env.local en la raíz con:
+Crea un archivo .env en /client con:
 
 ```
 NEXT_PUBLIC_API_BASE=http://localhost:3001

@@ -1,0 +1,291 @@
+[
+  {
+    "id": "p1",
+    "name": "Guantes GN102",
+    "price": 59.9,
+    "isAvailable": true,
+    "category": "gloves",
+    "image": "/images/products/bolsa.jpg"
+  },
+  {
+    "id": "p2",
+    "name": "Casco CS433",
+    "price": 79.9,
+    "isAvailable": false,
+    "category": "headgear",
+    "image": "/images/products/casco.jpg"
+  },
+  {
+    "id": "p3",
+    "name": "Bolsa AC990",
+    "price": 24.5,
+    "isAvailable": true,
+    "category": "bag",
+    "image": "/images/products/bolsa.jpg"
+  },
+  {
+    "id": "p4",
+    "name": "Botas BT220",
+    "price": 89.9,
+    "isAvailable": true,
+    "category": "footwear",
+    "image": "/images/products/botas.jpg"
+  },
+  {
+    "id": "p5",
+    "name": "Chaleco CV110",
+    "price": 45.0,
+    "isAvailable": false,
+    "category": "vest",
+    "image": "/images/products/chaleco.jpg"
+  },
+  {
+    "id": "p6",
+    "name": "Lentes GF300",
+    "price": 35.5,
+    "isAvailable": true,
+    "category": "eyewear",
+    "image": "/images/products/lentes.jpg"
+  },
+
+  {
+    "id": "p7",
+    "name": "Guantes GN103",
+    "price": 62.0,
+    "isAvailable": true,
+    "category": "gloves",
+    "image": "/images/products/guantes.jpg"
+  },
+  {
+    "id": "p8",
+    "name": "Casco CS434",
+    "price": 82.5,
+    "isAvailable": true,
+    "category": "headgear",
+    "image": "/images/products/casco.jpg"
+  },
+  {
+    "id": "p9",
+    "name": "Bolsa AC991",
+    "price": 26.0,
+    "isAvailable": false,
+    "category": "bag",
+    "image": "/images/products/bolsa.jpg"
+  },
+  {
+    "id": "p10",
+    "name": "Botas BT221",
+    "price": 92.0,
+    "isAvailable": true,
+    "category": "footwear",
+    "image": "/images/products/botas.jpg"
+  },
+  {
+    "id": "p11",
+    "name": "Chaleco CV111",
+    "price": 48.0,
+    "isAvailable": true,
+    "category": "vest",
+    "image": "/images/products/chaleco.jpg"
+  },
+  {
+    "id": "p12",
+    "name": "Lentes GF301",
+    "price": 37.5,
+    "isAvailable": false,
+    "category": "eyewear",
+    "image": "/images/products/lentes.jpg"
+  },
+  {
+    "id": "p13",
+    "name": "Guantes GN104",
+    "price": 65.0,
+    "isAvailable": true,
+    "category": "gloves",
+    "image": "/images/products/guantes.jpg"
+  },
+  {
+    "id": "p14",
+    "name": "Casco CS435",
+    "price": 85.0,
+    "isAvailable": true,
+    "category": "headgear",
+    "image": "/images/products/casco.jpg"
+  },
+  {
+    "id": "p15",
+    "name": "Bolsa AC992",
+    "price": 27.5,
+    "isAvailable": true,
+    "category": "bag",
+    "image": "/images/products/bolsa.jpg"
+  },
+  {
+    "id": "p16",
+    "name": "Botas BT222",
+    "price": 95.0,
+    "isAvailable": false,
+    "category": "footwear",
+    "image": "/images/products/botas.jpg"
+  },
+  {
+    "id": "p17",
+    "name": "Chaleco CV112",
+    "price": 50.0,
+    "isAvailable": true,
+    "category": "vest",
+    "image": "/images/products/chaleco.jpg"
+  },
+  {
+    "id": "p18",
+    "name": "Lentes GF302",
+    "price": 39.0,
+    "isAvailable": true,
+    "category": "eyewear",
+    "image": "/images/products/lentes.jpg"
+  },
+  {
+    "id": "p19",
+    "name": "Guantes GN105",
+    "price": 68.0,
+    "isAvailable": false,
+    "category": "gloves",
+    "image": "/images/products/guantes.jpg"
+  },
+  {
+    "id": "p20",
+    "name": "Casco CS436",
+    "price": 88.0,
+    "isAvailable": true,
+    "category": "headgear",
+    "image": "/images/products/casco.jpg"
+  },
+  {
+    "id": "p21",
+    "name": "Bolsa AC993",
+    "price": 28.0,
+    "isAvailable": true,
+    "category": "bag",
+    "image": "/images/products/bolsa.jpg"
+  },
+  {
+    "id": "p22",
+    "name": "Botas BT223",
+    "price": 98.0,
+    "isAvailable": true,
+    "category": "footwear",
+    "image": "/images/products/botas.jpg"
+  },
+  {
+    "id": "p23",
+    "name": "Chaleco CV113",
+    "price": 52.0,
+    "isAvailable": false,
+    "category": "vest",
+    "image": "/images/products/chaleco.jpg"
+  },
+  {
+    "id": "p24",
+    "name": "Lentes GF303",
+    "price": 41.0,
+    "isAvailable": true,
+    "category": "eyewear",
+    "image": "/images/products/lentes.jpg"
+  },
+  {
+    "id": "p25",
+    "name": "Guantes GN106",
+    "price": 70.0,
+    "isAvailable": true,
+    "category": "gloves",
+    "image": "/images/products/guantes.jpg"
+  },
+  {
+    "id": "p26",
+    "name": "Casco CS437",
+    "price": 90.0,
+    "isAvailable": false,
+    "category": "headgear",
+    "image": "/images/products/casco.jpg"
+  },
+  {
+    "id": "p27",
+    "name": "Bolsa AC994",
+    "price": 29.5,
+    "isAvailable": true,
+    "category": "bag",
+    "image": "/images/products/bolsa.jpg"
+  },
+  {
+    "id": "p28",
+    "name": "Botas BT224",
+    "price": 100.0,
+    "isAvailable": true,
+    "category": "footwear",
+    "image": "/images/products/botas.jpg"
+  },
+  {
+    "id": "p29",
+    "name": "Chaleco CV114",
+    "price": 55.0,
+    "isAvailable": true,
+    "category": "vest",
+    "image": "/images/products/chaleco.jpg"
+  },
+  {
+    "id": "p30",
+    "name": "Lentes GF304",
+    "price": 42.5,
+    "isAvailable": false,
+    "category": "eyewear",
+    "image": "/images/products/lentes.jpg"
+  },
+  {
+    "id": "p31",
+    "name": "Guantes GN107",
+    "price": 72.0,
+    "isAvailable": true,
+    "category": "gloves",
+    "image": "/images/products/guantes.jpg"
+  },
+  {
+    "id": "p32",
+    "name": "Casco CS438",
+    "price": 92.0,
+    "isAvailable": true,
+    "category": "headgear",
+    "image": "/images/products/casco.jpg"
+  },
+  {
+    "id": "p33",
+    "name": "Bolsa AC995",
+    "price": 30.0,
+    "isAvailable": true,
+    "category": "bag",
+    "image": "/images/products/bolsa.jpg"
+  },
+  {
+    "id": "p34",
+    "name": "Botas BT225",
+    "price": 102.0,
+    "isAvailable": false,
+    "category": "footwear",
+    "image": "/images/products/botas.jpg"
+  },
+  {
+    "id": "p35",
+    "name": "Chaleco CV115",
+    "price": 57.0,
+    "isAvailable": true,
+    "category": "vest",
+    "image": "/images/products/chaleco.jpg"
+  },
+  {
+    "id": "p36",
+    "name": "Lentes GF305",
+    "price": 44.0,
+    "isAvailable": true,
+    "category": "eyewear",
+    "image": "/images/products/lentes.jpg"
+  }
+]

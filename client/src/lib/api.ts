@@ -1,7 +1,12 @@
 import { apiClient } from "./apiClient";
 import { Product, ProductQuery, PaginatedResponse } from "../types";
 
-// Obtener productos con filtros y paginación
+/**
+ * Obtiene productos desde la API con filtros y paginación.
+ * @param query Filtros de búsqueda, orden y disponibilidad
+ * @returns Lista de productos paginada
+ * @throws Error si la petición falla
+ */
 export const getProducts = async (
   query: ProductQuery = {}
 ): Promise<PaginatedResponse<Product>> => {
@@ -19,7 +24,12 @@ export const getProducts = async (
   }
 };
 
-// Obtener producto por ID
+/**
+ * Obtiene un producto por su ID.
+ * @param id ID del producto
+ * @returns Producto correspondiente
+ * @throws Error si la petición falla
+ */
 export const getProductById = async (id: string): Promise<Product> => {
   try {
     const { data } = await apiClient.get<Product>(`/api/products/${id}`);
@@ -30,7 +40,12 @@ export const getProductById = async (id: string): Promise<Product> => {
   }
 };
 
-// Obtener los productos más baratos
+/**
+ * Obtiene los productos más baratos, limitado por cantidad.
+ * @param limit Cantidad de productos a obtener (por defecto 3)
+ * @returns Lista de productos más baratos
+ * @throws Error si la petición falla
+ */
 export const getCheapestProducts = async (
   limit: number = 3
 ): Promise<Product[]> => {

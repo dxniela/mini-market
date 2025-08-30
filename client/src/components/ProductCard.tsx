@@ -6,6 +6,11 @@ interface ProductCardProps {
   product: Product;
 }
 
+/**
+ * Componente de tarjeta de producto.
+ * Muestra la imagen, nombre, precio, categoría y disponibilidad.
+ * Al hacer click, navega a la página de detalle del producto.
+ */
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link

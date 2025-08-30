@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   description: "Tu tienda online de productos de seguridad y equipamiento",
 };
 
+/**
+ * Layout raíz de la aplicación.
+ *
+ * Este componente envuelve todas las páginas de la app, proporcionando:
+ * - Header con logo y navegación (desktop y mobile)
+ * - Footer con información de derechos de autor
+ * - Contenedor principal (`main`) para renderizar las páginas hijas
+ *
+ * @param {Object} props
+ * @param {React.ReactNode} props.children Contenido de la página
+ *
+ * @component
+ */
 export default function RootLayout({
   children,
 }: {

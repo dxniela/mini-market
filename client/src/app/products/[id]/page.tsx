@@ -7,15 +7,43 @@ import Link from "next/link";
 import { getProductById } from "../../../lib/api";
 import { Product } from "../../../types";
 
+/**
+ * Página de detalle de un producto.
+ *
+ * Muestra información completa de un producto específico, incluyendo:
+ * - Imagen (con fallback si no existe)
+ * - Nombre, precio, categoría, código
+ * - Estado de disponibilidad (En stock / Sin stock)
+ * - Botones de acción: agregar a favoritos, volver, comprar
+ *
+ * Funcionalidades:
+ * - Carga los datos del producto desde el backend usando el ID de la URL
+ * - Maneja estados de carga, error y producto no encontrado
+ * - Permite marcar/desmarcar el producto como favorito (estado local)
+ *
+ * Hooks:
+ * - useEffect: para cargar los datos al montar el componente o cuando cambia el productId
+ * - useState: para manejar el producto, loading, error e isFavorite
+ *
+ * @component
+ */
 export default function ProductDetailPage() {
+  // Obtener el ID del producto desde la URL
   const params = useParams();
   const productId = params.id as string;
 
+  /** Estado del producto cargado desde la API */
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  /** Estado de favorito (solo local, no persiste en backend) */
   const [isFavorite, setIsFavorite] = useState(false);
 
+  /**
+   * useEffect para cargar el producto desde el backend
+   * cuando el ID cambia
+   */
   useEffect(() => {
     const loadProduct = async () => {
       if (!productId) return;
@@ -36,10 +64,14 @@ export default function ProductDetailPage() {
     loadProduct();
   }, [productId]);
 
+  /**
+   * Alterna el estado de favorito
+   */
   const toggleFavorite = () => {
     setIsFavorite(!isFavorite);
   };
 
+  // Renderizado condicional según el estado
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -70,6 +102,7 @@ export default function ProductDetailPage() {
     );
   }
 
+  // Render principal del detalle del producto
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* tabs */}
@@ -105,7 +138,7 @@ export default function ProductDetailPage() {
         </ol>
       </nav>
 
-      {/* Product detail */}
+      {/* Detalles del producto */}
       <div className="bg-white rounded-lg shadow-sm overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
           {/* Imagen del producto */}

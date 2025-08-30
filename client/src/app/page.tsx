@@ -1,5 +1,15 @@
 import Link from "next/link";
 
+/**
+ * Página de inicio de Mini Market.
+ *
+ * Muestra:
+ * - Sección principal de bienvenida con un llamado a la acción a los productos
+ * - Sección de features/beneficios de la tienda
+ * - Sección final con CTA destacado para explorar productos
+ *
+ * @component
+ */
 export default function HomePage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -22,7 +32,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Features Section */}
+      {/* Features Section: Beneficios */}
       <div className="mt-20">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Feature 1 */}
@@ -66,7 +76,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* CTA Section */}
+      {/* Llamada a la acción */}
       <div className="mt-20 bg-[#0080ff] rounded-lg">
         <div className="px-6 py-12 sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between">
           <div>

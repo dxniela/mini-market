@@ -5,7 +5,43 @@ import { getProducts } from "../../lib/api";
 import ProductCard from "../../components/ProductCard";
 import { Product, PaginatedResponse } from "../../types";
 
+/**
+ * Página de listado de productos.
+ *
+ * Permite explorar el catálogo completo de productos con las siguientes funcionalidades:
+ * - Búsqueda por nombre o categoría
+ * - Ordenamiento por nombre o precio (ascendente / descendente)
+ * - Filtrado por disponibilidad (en stock / sin stock)
+ * - Paginación de resultados
+ *
+ * Hooks:
+ * - useState: maneja productos, filtros, paginación, loading y error
+ * - useEffect: carga los productos cuando cambian los filtros o la página
+ * - useCallback: memoriza la función loadProducts para evitar recrearla innecesariamente
+ *
+ * Estado:
+ * - products: array de productos cargados
+ * - loading: indica si se está cargando la información
+ * - error: mensaje de error en caso de fallo
+ * - search: término de búsqueda
+ * - sortBy: campo por el que se ordena ("name" o "price")
+ * - sortOrder: orden de clasificación ("asc" o "desc")
+ * - availableOnly: filtro de disponibilidad (true/false/undefined)
+ * - currentPage: página actual de la paginación
+ * - pagination: objeto con información de paginación (total, totalPages, limit, page)
+ *
+ * Funciones:
+ * - loadProducts: carga los productos desde el backend según los filtros y la página actual
+ * - setCurrentPage: actualiza la página actual (para la paginación)
+ * - reset filtros: reinicia todos los filtros a sus valores por defecto
+ *
+ * Render:
+ * - Muestra estado de carga, error, grid de productos, filtros y controles de paginación.
+ *
+ * @component
+ */
 export default function ProductsPage() {
+  // Estados
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +59,10 @@ export default function ProductsPage() {
     totalPages: 0,
   });
 
-  // Función para cargar productos
+  /**
+   * Función para cargar productos desde la API según los filtros actuales.
+   * Actualiza los estados products, pagination, loading y error.
+   */
   const loadProducts = useCallback(async () => {
     try {
       setLoading(true);
@@ -41,9 +80,7 @@ export default function ProductsPage() {
       setProducts(response.data);
       setPagination(response.pagination);
     } catch (err) {
-      setError(
-        "Error al cargar los productos."
-      );
+      setError("Error al cargar los productos.");
       console.error("Error loading products:", err);
     } finally {
       setLoading(false);

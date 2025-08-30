@@ -30,5 +30,5 @@ Crea un archivo .env en /server con:
 
 ```
 PORT=3001
-DATABASE_URL=postgres://usuario:contraseña@localhost:5432/mini_market
+DATABASE_URL=mongodb+srv://dxniela:<db_password>@mini-market.qetlgrt.mongodb.net/
 ```
